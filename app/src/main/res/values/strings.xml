@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Insync Recorder</string>
+    <string name="question_1">Current Device Role</string>
+    <string name="question_2">Host IP Address</string>
+    <string name="question_3">Host Port Number</string>
+    <string name="option_1">Back View</string>
+    <string name="option_2">Side View</string>
+    <string name="dot">.</string>
+    <string name="hint">xxx</string>
+    <string name="hintPort">5000</string>
+    <string name="next">NEXT</string>
+    <string name="instructions">Instructions</string>
+    <string name="instruction_1">• Make sure you turn off AutoRotate</string>
+    <string name="instruction_2">• Keep the phone in a horizontal position</string>
+    <string name="instruction_3">• Rotate the phone 90° in anti-clockwise direction</string>
+    <string name="instruction_4">• Do not press the back button or close the app</string>
+    <string name="zero_time">00:00</string>
+</resources>
