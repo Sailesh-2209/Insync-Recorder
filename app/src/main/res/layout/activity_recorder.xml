@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/containerRecordingActivity"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/primaryBackgroudColor">
 
     <androidx.camera.view.PreviewView
         android:id="@+id/previewView"
@@ -94,15 +95,16 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
+        android:id="@+id/recordingTimeContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:alpha="0.5"
+        android:layout_marginTop="24dp"
+        android:alpha="0.8"
         android:background="@drawable/rounded_timer"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="4dp"
+        android:rotation="90"
         app:layout_constraintStart_toStartOf="@+id/previewView"
         app:layout_constraintTop_toTopOf="@+id/previewView">
 
@@ -113,7 +115,7 @@
             android:layout_weight="1"
             android:background="@drawable/recording_symbol"
             android:scaleX="0.5"
-            android:scaleY="0.4" />
+            android:scaleY="0.3" />
 
         <TextView
             android:id="@+id/recordingTime"

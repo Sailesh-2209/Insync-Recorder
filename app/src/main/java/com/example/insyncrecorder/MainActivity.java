@@ -24,16 +24,19 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private final String TAG = "MAIN_ACTIVITY";
 
-    Activity activity;
+    private Activity activity;
 
-    EditText ipAddress1, ipAddress2, ipAddress3, ipAddress4, portNumber;
+    // ip address is in the form of four edit text fields
+    private EditText ipAddress1, ipAddress2, ipAddress3, ipAddress4, portNumber;
 
-    Socket socket;
+    private Socket socket;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG, "Start of Main Activity");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.d(TAG, "Content View set successfully");
 
         activity = MainActivity.this;
 
@@ -100,9 +103,11 @@ public class MainActivity extends AppCompatActivity {
         // networking activities should not be done on the main thread
         Thread thread = new Thread(() -> {
             boolean result = makeSocketConnection(hostIpAddress, portNum);
+            Log.d(TAG, "Socket connection successful");
             if (result) {
                 RecordingActivity.socket = socket;
                 RecordingActivity.deviceRole = deviceRole;
+                Log.d(TAG, "Starting new intent - RecordingActivity");
                 Intent intent = new Intent(MainActivity.this, RecordingActivity.class);
                 progressDialog.dismiss();
                 startActivity(intent);
@@ -145,22 +150,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean makeSocketConnection(String hostIpAddress, int portNum) {
+        Log.d(TAG, "Trying to make a socket connection to the host");
         // make a socket connection to the host
         try {
             socket = new Socket(hostIpAddress, portNum);
         } catch (UnknownHostException e) {
-            activity.runOnUiThread(() -> {
-                Toast.makeText(MainActivity.this,
-                        "Unknown Host. Check the IP address and make sure you are connected to the same network as host computer",
-                        Toast.LENGTH_LONG).show();
-            });
+            activity.runOnUiThread(() -> Toast.makeText(MainActivity.this,
+                    "Unknown Host. Check the IP address and make sure you are connected to the same network as host computer",
+                    Toast.LENGTH_LONG).show());
             Log.e(TAG, e.getMessage());
             e.printStackTrace();
             return false;
         } catch (IOException e) {
-            activity.runOnUiThread(() -> {
-                Toast.makeText(MainActivity.this, "Error in IO Operation. Please try again.", Toast.LENGTH_LONG).show();
-            });
+            activity.runOnUiThread(() -> Toast.makeText(MainActivity.this, "Error in IO Operation. Please try again.", Toast.LENGTH_LONG).show());
             Log.e(TAG, e.getMessage());
             e.printStackTrace();
             return false;

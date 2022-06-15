@@ -3,12 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/saile/Desktop/Recorder/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2235" />
+        <entry key="..\:/Users/saile/Desktop/Recorder/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2035" />
         <entry key="..\:/Users/saile/Desktop/Recorder/app/src/main/res/drawable/recording_symbol.xml" value="0.251" />
         <entry key="..\:/Users/saile/Desktop/Recorder/app/src/main/res/drawable/rounded_edittext.xml" value="0.207" />
         <entry key="..\:/Users/saile/Desktop/Recorder/app/src/main/res/drawable/rounded_timer.xml" value="0.251" />
         <entry key="..\:/Users/saile/Desktop/Recorder/app/src/main/res/layout/activity_filetransfer.xml" value="0.25" />
         <entry key="..\:/Users/saile/Desktop/Recorder/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/saile/Desktop/Recorder/app/src/main/res/layout/activity_recorder.xml" value="0.264" />
+        <entry key="..\:/Users/saile/Desktop/Recorder/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2235" />
       </map>
     </option>
   </component>
